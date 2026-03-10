@@ -9,7 +9,7 @@ Welcome to Simple Vim a distribution with the intention of providing a reliable 
 
 I would love to thank the neovim community for their great editor and  plugins every plugin included here is the result of very hardwork from their respective authors.
 
-Also I would specially like to thanks tj devries I have learnt a great deal from his youtube videos please subscribe to his channel  	[tj devries youtube channle](https://www.youtube.com/@teej_dv) 
+Also I would specially like to thanks tj devries I have learnt a great deal from his youtube videos please subscribe to his channel  	[tj devries youtube channel](https://www.youtube.com/@teej_dv) 
 
 ## Instalation
 
