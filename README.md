@@ -18,11 +18,11 @@ Make sure you install neovim in your favorite Linux distribution:
 
 For Fedora like distributions:
 
-sudo dnf -y install neovim
+sudo dnf -y install neovim;
 sudo dnf install ripgrep
 
 For Ubuntu like distributions:
-sudo apt-get install neovim
+sudo apt-get install neovim;
 sudo apt-get install ripgrep
 
 Mac (Make sure you install https://brew.sh first)
