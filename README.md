@@ -51,3 +51,18 @@ Execute Neovim and wait a moment :nvim
 | ctrl +alt+t| Toggle open and close small terminal window at the bottom for executing commands or other task| 
 
 
+## Modifications
+
+If you read to modify or add things.
+You can check
+$HOME/.config/nvim/init.lua
+
+### Modify key mappings and editor commands
+
+nvim/lua/config/keymaps/mykeymaps.lua
+
+### Add or Modify plugins
+
+nvim/lua/config/plugins/myplugins.lua
+
+
