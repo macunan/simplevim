@@ -1,7 +1,6 @@
 # Simplevim
 
 ## Introduction
-
 Welcome to Simple Vim a distribution with the intention of providing a reliable text editor that will not fail in a high stress environment. With some extra features to make your life easier. I work in a high stress environment where taking notes and using the copy and paste is fundamental. Also with this editor is easy to review other text files to look for information and relevant text to the issue. A lot of times some great editors that I have used failed me in a critical moment. There is a lot great Vim/Neovim distributions. But for now this I have centered on a simple setup that users can build upon.
 
 
@@ -46,9 +45,14 @@ Execute Neovim and wait a moment :nvim
 | <leader> b| look for opened  buffers  |
 | <leader> h| look for historical files  |
 | <leader> g| Search for text in files in current directory and sub directories  |
-| ctrl m| Move to buffer on the right | 
-| ctrl n| Move to buffer on the left | 
+| ctrl m| Move to buffer(tab) on the right | 
+| ctrl n| Move to buffer(tab) on the left | 
 | ctrl +alt+t| Toggle open and close small terminal window at the bottom for executing commands or other task| 
+| <leader>tn| Create new tab| 
+| <leader>tc| Close tab| 
+| <leader>e| Show Errors on the buffer | 
+| <leader>E | Show Errors on Telescope list you can search | 
+| <leader>a | Toggle Show functions/methods objects in  Telescope list (Aerial plugin) | 
 
 
 ## Modifications
