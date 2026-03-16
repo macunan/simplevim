@@ -1,3 +1,6 @@
+vim.g.mapleader = ","
+vim.g.maplocalleader = ","
+local o = vim.opt
 vim.cmd([[set mouse=a]])
 vim.cmd([[set noswapfile]])
 vim.cmd([[hi @lsp.type.number gui=italic]])
@@ -14,9 +17,6 @@ vim.opt.termguicolors = true
 vim.opt.undofile = true
 vim.opt.number = true
 vim.o.clipboard = 'unnamedplus'
--- vim.cmd('colorscheme  peaksea')
-vim.g.mapleader = ","
-vim.g.maplocalleader = ","
 vim.o.smartcase = true
 local opts = { noremap = true, silent = true }
 vim.cmd('set nocompatible')
@@ -29,8 +29,50 @@ local map = vim.api.nvim_set_keymap
 map('n', '<C-n>',':BufferPrevious<CR>', opts)
 map('n', '<C-m>',':BufferNext<CR>', opts)
 -- Nvim Tree
-vim.api.nvim_set_keymap("n","<leader>e",":NvimTreeToggle<cr>",opts)
-local o = vim.opt
+-- Enable ErrorLensToggle see errors
+vim.api.nvim_set_keymap("n","<leader>e",":ErrorLensToggle<cr>",opts)
+vim.api.nvim_set_keymap("n","<leader>E",":Telescope diagnostics<cr>",opts)
+vim.opt.formatoptions:append({ "r" })
+map('n', '<C-b>',':Navbuddy <CR>',opts)
+-- Above is for Fedoral Linux
+vim.cmd("map <leader>ss :setlocal spell!<cr>")
+vim.cmd("map <leader>sn ]s")
+vim.cmd("map <leader>sp [s")
+vim.cmd("map <leader>sa zg")
+vim.cmd("map <leader>sz z=")
+vim.cmd("set autochdir")
+vim.cmd("autocmd FileType sql setlocal omnifunc=vim_dadbod_completion#omni")
+map('n', '<C-t>',':ToggleTerm size=5 direction=horizontal <CR>', opts)
+
+
+
+
+require("aerial").setup({
+
+  filter_kind = {
+    "Class",
+    "Constructor",
+    "Enum",
+    "Function",
+    "Interface",
+    "Module",
+    "Method",
+    "Struct",
+  },
+nerd_font = true,
+highlight_on_hover = true,
+  -- optionally use on_attach to set keymaps when aerial has attached to a buffer
+  on_attach = function(bufnr)
+    -- Jump forwards/backwards with '{' and '}'
+    vim.keymap.set("n", ",", "<cmd>AerialPrev<CR>", { buffer = bufnr })
+    vim.keymap.set("n", ".", "<cmd>AerialNext<CR>", { buffer = bufnr })
+  end,
+})
+-- You probably also want to set a keymap to toggle aerial
+vim.keymap.set("n", "<leader>a", ":Telescope aerial<CR>")
+
+
+
 o.compatible = false
 -- enable spell check in spanish neovim
 -- vim.cmd("set spelllang=es")
@@ -47,15 +89,6 @@ vim.cmd("set backspace=indent,eol,start")
 --sudo wget http://ftp.vim.org/pub/vim/runtime/spell/es.utf-8.spl
 --sudo wget http://ftp.vim.org/pub/vim/runtime/spell/es.utf-8.sug
 -- Make sure you copy to the following location /usr/share/nvim/runtime/spell/  
--- Above is for Fedoral Linux
-vim.cmd("map <leader>ss :setlocal spell!<cr>")
-vim.cmd("map <leader>sn ]s")
-vim.cmd("map <leader>sp [s")
-vim.cmd("map <leader>sa zg")
-vim.cmd("map <leader>sz z=")
-vim.cmd("set autochdir")
-vim.cmd("autocmd FileType sql setlocal omnifunc=vim_dadbod_completion#omni")
-map('n', '<C-t>',':ToggleTerm size=5 direction=horizontal <CR>', opts)
 vim.scriptencoding = "utf-8"
 vim.opt.encoding = "utf-8"
 vim.opt.fileencoding = "utf-8"
@@ -74,6 +107,3 @@ vim.opt.tabstop = 2
 vim.opt.backspace = { "start", "eol", "indent" }
 vim.opt.path:append({ "**" })
 -- Add asterisks in block comments
-vim.opt.formatoptions:append({ "r" })
-map('n', '<C-b>',':Navbuddy <CR>',opts)
-
